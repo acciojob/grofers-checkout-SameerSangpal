@@ -34,6 +34,21 @@
       <td class="price">50</td>
     </tr>
   </table>
+
+	<button id="sum-btn">Get Total Price</button>
+	<div id="ans"></div>
+
+	<script>
+		document.getElementById("sum-btn").addEventListener("click", function(){
+			const priceCells = document.querySelectorAll(".price");
+			let total = 0;
+			priceCells.forEach(cell => {
+				const val = parseFloat(cell.textContent.trim());
+				if(!isNaN(val)) total += val;
+			});
+			document.getElementById("ans").textContent = total;
+		});
+	</script>
     <script type="text/javascript" src="./script.js"></script>
 </body>
 </html>
